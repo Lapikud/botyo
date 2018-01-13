@@ -72,7 +72,7 @@ export default class ChatApi {
      * @return {Promise.<Object>} promise with info object
      */
     getThreadInfo(threadId) {
-        return this._promisifyAndCache(this._rawApi.getThreadInfo)(threadId);
+        return this._promisifyAndCache(this._rawApi.getThreadInfoGraphQL)(threadId);
     }
 
     /**
@@ -86,7 +86,7 @@ export default class ChatApi {
      * @return {Promise.<Object[]>} promise with array of messages
      */
     getThreadHistory(threadId, amount, timestamp) {
-        return this._promisifyAndCache(this._rawApi.getThreadHistory)(threadId, amount, timestamp);
+        return this._promisifyAndCache(this._rawApi.getThreadHistoryGraphQL)(threadId, amount, timestamp);
     }
 
     /**
