@@ -3,7 +3,7 @@ import CommandModule from "../CommandModule";
 import ChatApi from "../../core/api/ChatApi";
 
 @Inject(ChatApi)
-export default class FlexCommand extends CommandModule {
+export default class DiscordCommand extends CommandModule {
     /**
      * @param {ChatApi} api
      */
@@ -14,11 +14,11 @@ export default class FlexCommand extends CommandModule {
     }
 
     getCommand() {
-        return "flex";
+        return "discord";
     }
 
     getDescription() {
-        return "Flexes";
+        return "Returns Discord join link";
     }
 
     getUsage() {
@@ -30,6 +30,6 @@ export default class FlexCommand extends CommandModule {
     }
 
     execute(msg, argsString) {
-        return this.api.sendMessage(`💪`, msg.threadID);
+        return this.api.sendMessage("https://discord.gg/Y58tU7q", msg.threadID);
     }
 }

@@ -3,7 +3,7 @@ import CommandModule from "../CommandModule";
 import ChatApi from "../../core/api/ChatApi";
 
 @Inject(ChatApi)
-export default class FlexCommand extends CommandModule {
+export default class RedditCommand extends CommandModule {
     /**
      * @param {ChatApi} api
      */
@@ -14,11 +14,11 @@ export default class FlexCommand extends CommandModule {
     }
 
     getCommand() {
-        return "flex";
+        return "reddit";
     }
 
     getDescription() {
-        return "Flexes";
+        return "Returns Lapikud Subreddit link";
     }
 
     getUsage() {
@@ -30,6 +30,6 @@ export default class FlexCommand extends CommandModule {
     }
 
     execute(msg, argsString) {
-        return this.api.sendMessage(`💪`, msg.threadID);
+        return this.api.sendMessage("https://www.reddit.com/r/Lapikud/", msg.threadID);
     }
 }

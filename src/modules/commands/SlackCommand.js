@@ -3,7 +3,7 @@ import CommandModule from "../CommandModule";
 import ChatApi from "../../core/api/ChatApi";
 
 @Inject(ChatApi)
-export default class FlexCommand extends CommandModule {
+export default class SlackCommand extends CommandModule {
     /**
      * @param {ChatApi} api
      */
@@ -14,11 +14,11 @@ export default class FlexCommand extends CommandModule {
     }
 
     getCommand() {
-        return "flex";
+        return "slack";
     }
 
     getDescription() {
-        return "Flexes";
+        return "Returns slack join link";
     }
 
     getUsage() {
@@ -30,6 +30,6 @@ export default class FlexCommand extends CommandModule {
     }
 
     execute(msg, argsString) {
-        return this.api.sendMessage(`💪`, msg.threadID);
+        return this.api.sendMessage("https://join.slack.com/t/lapikud/shared_invite/enQtMzAxNDUyNTg5NjIzLTM3MGM0NTU0M2E2NGQzYmRkOGI1ZTRjYWMwZGYyMGViNjRmOTBiMzg3MDQ3ZDgzMDUzNDZhZDRlNWI1NDhiMDg", msg.threadID);
     }
 }
