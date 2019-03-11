@@ -146,3 +146,17 @@ modules:
 
 misc:
   googlApiKey: YOUR_GOOGL_API_KEY   # https://developers.google.com/url-shortener/v1/getting_started?csw=1#APIKey
+
+# This is a list of phrases that will trigger the stop notice. Feel free to add to this.
+inappropriate-phrases:
+  triggers:
+    - intel
+    - amd
+    - nvidia
+  responses:
+    - Kuule, lõpeta ära
+    - It's time to STOP
+    - See siin pole Delfi kommentaarium
+    - why
+    - Oh come on
+    - Ma olen sinus väga pettunud. Tegelikult ka. Sa olid noorena nii rõõmus, nii motiveeritud, mis sinust küll saanud on?
